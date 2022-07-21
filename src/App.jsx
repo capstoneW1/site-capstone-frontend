@@ -6,6 +6,7 @@ import Landing from "./components/Landing/Landing";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import RegisterFrom from "./components/RegisterForm/RegisterForm";
 import ProfilePage from "./components/ProfilePage/ProfilePage";
+import ProductDetails from "./components/ProductDetails/ProductDetails";
 
 function App() {
   return (
@@ -66,6 +67,14 @@ function App() {
                   <>
                     <Navbar />
                     <div>Not Found</div>
+                  </>
+                }
+              />
+              <Route
+                path="/productDetail"
+                element={
+                  <>
+                    <ProductDetails />
                   </>
                 }
               />
