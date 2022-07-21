@@ -14,11 +14,15 @@
   }
 
   .shoe-card {
+    display: flex;
+    flex-direction: column;
     padding: 20px;
     width: 40%;
     color: white;
     background-color: #2a2727;
     border-radius: 20px;
+    justify-content: center;
+    align-items: center;
   }
 
   .price-card {
@@ -27,4 +31,8 @@
     color: white;
     background-color: #2a2727;
     border-radius: 20px;
+  }
+
+  .toggle-btn {
+    background: white;
   }

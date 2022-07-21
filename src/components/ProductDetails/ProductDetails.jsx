@@ -1,6 +1,8 @@
 import * as React from "react";
 import "./ProductDetails.css";
 
+import { useState } from "react";
+
 export default function ProductDetails() {
 
     const shoe = {
@@ -20,9 +22,31 @@ export default function ProductDetails() {
         total_sales: 1400,
         
     }
+
+    const[addedToWishlist, setAddedToWishlist]  = useState("Add to Wishlist");
+
+
+    
+    //Called when a user wants to add/remove this item to their wishlist.
+    //If the item is not yet added to the wishlist, add to wishlist,
+    //change text.
+    //Else, if item is already in wishlist, remove from wishlist,
+    //change text
+    const toggleWishlist = async () => {
+        console.log("CLICKED")
+        if(addedToWishlist == "Add to Wishlist") {
+            setAddedToWishlist("Remove from Wishlist")
+        }
+        else{
+            setAddedToWishlist("Add to Wishlist")
+        }
+        
+    }
   return (
     <div className="product-details">
         <div className="shoe-info">
+
+            {/* Displays info about shoe appearance/history  */}
             <div className="shoe-card">
                 <div className="card-header">
                     <h1 className="shoe-name">{shoe.name}</h1>
@@ -38,14 +62,57 @@ export default function ProductDetails() {
                     <p className="release-date">Release Date: {shoe.release_date}</p>
                     <p className="description">Description: {shoe.description}</p>
                 </div>
-                
-
-
             </div>
 
+            {/* This displays the information on the right side of the page. It includes market information */}
             <div className="price-card">
-                <p>price card</p>
+
+                {/* displays current price of sneaker */}
+                <div className="current-price">
+                    <h1>Current Price</h1>
+                    <h1>${shoe.market_price}</h1>
+                </div>
+                
+                <div className="shoe-size">
+                    <h1>Select Size</h1>
+                    {/* Render shoe size component */}
+                </div>
+
+                <div className="auction-info">
+                    {/* displays current bid */}
+                    <div className="bids">
+                        <p className="bids-header">Current Bid</p>
+                        <p className="bids-value">${shoe.current_bid}</p>
+                    </div>
+                    {/* displays lowest ask */}
+                    <div className="asks">
+                        <p className="asks-header">Lowest Ask</p>
+                        <p className="asks-value">${shoe.lowest_ask}</p>
+                    </div>
+                    {/* displays total sales*/}
+                    <div className="total sales">
+                        <p className="sales-header">Total Sales</p>
+                        <p className="sales-value">${shoe.total_sales}</p>
+                    </div>
+                </div>
+
+                <div className="toggle-wishlist">
+                    {/* Button to add to wishlist */}
+                    <button className="toggle-btn" onClick={toggleWishlist}>
+                        {addedToWishlist}
+                    </button>
+                </div>
+
+                <div className="email-updates">
+                    <h4>Receive updates</h4>
+                    {/* render email updates component */}
+                </div>
+
             </div>
+        </div>
+
+        <div className="price-history">
+            <h1>Price History</h1>
         </div>
 
     </div>
