@@ -3,6 +3,7 @@ import "./Landing.css";
 import { useNavigate } from "react-router-dom";
 import AboutUs from "../AboutUs/AboutUs"
 import Footer from "../Footer/Footer"
+import { useAuthContext } from "../../contexts/auth"
 
 /*
 The landing component will be render/referenced in the App.jsx file
@@ -13,6 +14,7 @@ the AboutUs and Footer component which will finalized the content of the
 landing page
  */
 export default function Landing() {
+  const {user, setUser} = useAuthContext()
   const navigate = useNavigate();
 
   const browse = async () => {
@@ -23,6 +25,7 @@ export default function Landing() {
     navigate("/register");
   };
 
+  console.log("user", user)
   return (
     <div className="landing-page">
       <div className="Hero">

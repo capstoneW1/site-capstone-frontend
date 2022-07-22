@@ -1,93 +1,131 @@
 .login-page {
+  display: flex;
   flex-direction: row;
-  display: flex;
-  justify-content: space-around;
   background-color: black;
-  max-height: 100%;
-  padding-top: 86px;
+  align-items: center;
+  height: 100%;
 }
-
-.card {
-  margin-top: 50px;
-  margin-bottom: 50px;
-  padding: 20px;
-  width: 40%;
+.login-page .card {
+  width: 35%;
+  margin-left: 10%;
+  align-items: center;
+}
+.login-page .card .one{
+  margin-top: -50px;
+}
+.login-page .card .titles{
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 90px;
+  align-items: center;
+  text-align: center;
   color: white;
-  background-color: black;
+  margin-top: 140px;
 }
-
-.trending {
-  margin-top: 50px;
-  margin-bottom: 50px;
-  padding: 20px;
-  width: 40%;
-  color: white;
-  background-color: black;
+.login-page .trending{
+  width: 35%;
+  margin-left: 10%;
 }
-
-.input-field {
-  margin: 8px 0;
+.login-page .input-field{
+  margin-bottom: 15px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+}
+.login-page .input-field input{
   width: 100%;
-  color: white;
+  background: #686262;
+  border-radius: 20px;
+  height: 70px;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 45px;
+  display: flex;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.7);
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin-top: 10px;
 }
-
-.form-input {
-  height: 60px;
-  padding: 0 15px;
-  font-size: 16px;
-  border: 1px solid var(--border-color);
-  width: 60%;
-  color: var(--pure-white);
-  border-radius: 15px;
-  align-content: center;
-  background-color: #686262;
-  margin-bottom: 5px;
+.login-page .input-field input[type=text]{
+  padding-left: 20px;
 }
-
 .form-input::placeholder {
-  color: white;
+  color: rgba(255, 255, 255, 0.7);
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 45px;
+  display: flex;
+  align-items: center;
+  padding-left: 30px
 }
-
 .sub-login {
-  margin: 8px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
-  color: white;
+  margin-bottom: 60px;
 }
-
-.submit-login,
-.register {
-  height: 60px;
-  padding: 0 15px;
-  font-size: 16px;
-  border: 1px solid var(--border-color);
-  width: 64%;
-  color: var(--pure-white);
-  border-radius: 15px;
-  align-content: center;
-  background-color: #ab5cd6;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  cursor: pointer;
+.sub-login .register{
+  margin-top: 35px
 }
-
-.submit-login,
-p {
-  color: white;
+.submit-login{
+  background: #ab5cd6;
+  border-radius: 20px;
+  height: 70px;
+  width: 102%;
+  margin-left: 2%;
+  margin-top: 10px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  align-items: center;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
-
-.forgot-pass {
-  text-decoration: none;
-  background-color: transparent;
-  border-color: transparent;
+.register{
+  background: #ab5cd6;
+  border-radius: 20px;
+  height: 70px;
+  width: 102%;
+  margin-left: 2%;
+  margin-top: 10px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  align-items: center;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+hr {
+    width: 100%;
+    border: 2px solid #686262;
+}
+.sub-login p{
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 45px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #AB5CD6;
+}
+.login-page .errors{
   color: #ab5cd6;
-  font-weight: 500;
   font-size: 25px;
-  align-items: flex-start;
-  cursor: pointer;
+  margin-bottom: 80px;
+  margin-top: -60px;
+}
+.login-page .error{
+  color: #ab5cd6;
+  font-size: 20px;
+  font-weight: 700;
 }
