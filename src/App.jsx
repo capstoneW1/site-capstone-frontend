@@ -6,9 +6,7 @@ import Landing from "./components/Landing/Landing";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import RegisterFrom from "./components/RegisterForm/RegisterForm";
 import ProfilePage from "./components/ProfilePage/ProfilePage";
-<<<<<<< HEAD
 import ProductDetails from "./components/ProductDetails/ProductDetails";
-=======
 import ProductPage from "./components/ProductPage/ProductPage";
 import { AuthContextProvider, useAuthContext } from "./contexts/auth"
 
@@ -25,7 +23,6 @@ export default function AppContainer(){
     </AuthContextProvider>
   )
 }
->>>>>>> main
 
 function App() {
   return (
