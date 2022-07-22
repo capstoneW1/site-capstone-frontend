@@ -6,6 +6,7 @@ import Landing from "./components/Landing/Landing";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import RegisterFrom from "./components/RegisterForm/RegisterForm";
 import ProfilePage from "./components/ProfilePage/ProfilePage";
+import ProductPage from "./components/ProductPage/ProductPage";
 import { AuthContextProvider, useAuthContext } from "./contexts/auth"
 
 
@@ -74,7 +75,15 @@ function App() {
                   </>
                 }
               />
-              <Route path="/product/*" element={<div>Product Page(s)</div>} />
+              <Route 
+                path="/product/*" 
+                element={
+                  <div>
+                    <Navbar />
+                    <ProductPage />
+                  </div>
+                } 
+              />
               <Route
                 path="*"
                 element={
