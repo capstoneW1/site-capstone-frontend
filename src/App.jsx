@@ -7,6 +7,21 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import RegisterFrom from "./components/RegisterForm/RegisterForm";
 import ProfilePage from "./components/ProfilePage/ProfilePage";
 import ProductPage from "./components/ProductPage/ProductPage";
+import { AuthContextProvider, useAuthContext } from "./contexts/auth"
+
+
+/*
+The AppContainer component will render the App component nested inside
+the AuthContextProvider to have access to the authValue like user and setUser
+ */
+
+export default function AppContainer(){
+  return (
+    <AuthContextProvider>
+      <App/>
+    </AuthContextProvider>
+  )
+}
 
 function App() {
   return (
@@ -86,4 +101,3 @@ function App() {
   );
 }
 
-export default App;

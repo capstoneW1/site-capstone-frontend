@@ -4,11 +4,21 @@ import { Link, useNavigate } from "react-router-dom"
 import { useState, useEffect } from "react"
 import axios from "axios"
 import apiClient from "../../services/apiClient"
+import { useAuthContext } from "../../contexts/auth"
 
+//Will render inside the App components where the user will
+//have access to create an account
 export default function RegisterForm(){
-    const navigate = useNavigate()
+
+    //Imports setUser from authContext to set user information
+    //with email, first and last name, etc.
+    const { user, setUser} = useAuthContext()
+
+    //might change this to use authContext variables
     const [isProcessing, setIsProcessing] = useState(false)
     const [errors, setErrors] = useState({})
+
+    const navigate = useNavigate()
     const [form, setForm] = useState({
         first_name: "",
         last_name: "",
@@ -16,8 +26,11 @@ export default function RegisterForm(){
         password: "",
         confirm_password: ""
     })
+
+    //This function is used to check error such as invalid
+    //emails and not matching passwords
     const handleOnInputChange = (event) => {
-        if(event.target.name == "password"){
+        if(event.target.name === "password"){
             if(form.confirm_password && form.confirm_password !== event.target.value){
                 setErrors((e) => ({ ...e, confirm_password: "Password's do not match"}))
             }else{
@@ -42,6 +55,11 @@ export default function RegisterForm(){
         setForm((f) => ({ ...f, [event.target.name]: event.target.value}))
     }
 
+    //This function is used to submit an user registration from
+    //If any errors exist from error state variable, it will display
+    //an error message. If email already exist, then another error message
+    //will display. If all is good, user will be navigated to trending page
+    //and their data is store in the authContext user variable
     const handleOnSubmit = async () => {
         setIsProcessing(true)
         setErrors((e) => ({ ...e, form: null}))
@@ -56,11 +74,15 @@ export default function RegisterForm(){
         const {data, error} = await apiClient.signUpUser({ first_name: form.first_name, last_name: form.last_name, email: form.email, password: form.password})
         if(error){
             setErrors((e) => ({ ...e, form: error}))
-        }else{
+        }
+        if(data){
+            setUser(data.user)
+            apiClient.setToken(data.token)
             navigate("/trending")
         }
         setIsProcessing(false)
     }
+
     return (
         <div className="register-form-container">
             <div className="inputss">
@@ -94,7 +116,6 @@ export default function RegisterForm(){
                     <button className="sign-up-btn" disabled={isProcessing} onClick={handleOnSubmit}>{isProcessing ? "Loading..." : "Sign Up"}</button>
                     <p>
                         Already a Member?
-                        {/* <span> </span> */}
                         <Link className="links" to="/login">Sign In</Link>
                     </p>
                 </div>
