@@ -33,7 +33,6 @@ export default function ProductDetails() {
     //Else, if item is already in wishlist, remove from wishlist,
     //change text
     const toggleWishlist = async () => {
-        console.log("CLICKED")
         if(addedToWishlist == "Add to Wishlist") {
             setAddedToWishlist("Remove from Wishlist")
         }
