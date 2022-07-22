@@ -3,8 +3,12 @@ import "./Login.css"
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import apiClient from "../../services/apiClient"
+import { useAuthContext } from "../../contexts/auth"
 
 export default function Login() {
+
+    //global varibale import from authContext
+    const { user, setUser } = useAuthContext()
 
     //used to navigate users to different pages
     const navigate = useNavigate()
@@ -42,6 +46,8 @@ export default function Login() {
           setErrors((e) => ({...e, form:error}))
         }
         else
+          setUser(data.user)
+          apiClient.setToken(data.token)
           navigate("/trending")
 
         // if(data?.user) {
