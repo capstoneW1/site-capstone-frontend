@@ -5,6 +5,7 @@
 .Hero {
   flex-direction: row;
   padding-top: 86px;
+  padding-bottom: 50px;
   display: flex;
   justify-content: space-around;
 }
@@ -16,9 +17,50 @@
   background-color: black;
 }
 
+.sub-btn {
+  flex-direction: row;
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+  padding-top: 30px;
+}
+
+.browse-btn {
+  text-decoration: none;
+  background: linear-gradient(90deg, #ab5cd6 0%, #fa2851 100%);
+  border-radius: 10px;
+  color: white;
+  font-size: medium;
+  font-weight: bold;
+  padding: 10px 20px 10px 20px;
+  cursor: pointer;
+}
+
+.signup-btn {
+  text-decoration: none;
+  background: transparent;
+  border-radius: 10px;
+  border-style: solid;
+  border-color: #686262;
+  border-width: 1.89px;
+  color: #686262;
+  font-size: medium;
+  font-weight: bold;
+  padding: 10px 20px 10px 20px;
+  cursor: pointer;
+}
+
 .Hero-pic {
   padding: 20px;
   width: 40%;
   color: white;
   background-color: black;
+}
+
+
+
+.trending {
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }

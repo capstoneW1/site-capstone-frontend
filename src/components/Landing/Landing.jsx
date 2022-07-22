@@ -17,10 +17,12 @@ export default function Landing() {
   const {user, setUser} = useAuthContext()
   const navigate = useNavigate();
 
+  //Use useNavigate to navigate user to the /trending page
   const browse = async () => {
     navigate("/trending");
   };
 
+  //Use useNavigate to navigate user to the /register page
   const signup = async () => {
     navigate("/register");
   };
@@ -30,7 +32,9 @@ export default function Landing() {
     <div className="landing-page">
       <div className="Hero">
         <div className="Header">
+          {/* Display Website name*/}
           <h1>LOREMIPS</h1>
+          {/* website description*/}
           <p>
             Lorem ipsum dolor adipiscing elit, sed do eiusmod tempor incididunt
             ut labore et dolore magna aliqua. Ut enim ad minim ve_niam, quis
@@ -40,18 +44,29 @@ export default function Landing() {
             cupidatat non proident, sunt in culpa qui officia deserunt mollit
             anim id est laborum.
           </p>
-
-          <button className="browse-btn" onClick={browse}>
-            Start Browsing
-          </button>
-          <button className="signup-btn" onClick={signup}>
-            Create an Account
-          </button>
+          <div className="sub-btn">
+            {/*button that calls browse function*/}
+            <button className="browse-btn" onClick={browse}>
+              Start Browsing
+            </button>
+            {/* Button that calls signup function*/}
+            <button className="signup-btn" onClick={signup}>
+              Create an Account
+            </button>
+          </div>
+          
         </div>
+        {/* Display picture*/}
         <div className="Hero-pic">
           <img src="img.png" alt="Hero Pic" />
         </div>
       </div>
+
+      {/*Renders trending component*/}
+      <div className="trending">
+        <p>Trending</p>
+      </div>
+
       {/* The AboutUs component will display information about the purpose of our webpage and functionality */}
       <AboutUs></AboutUs>
       {/* The Footer component will display information about how to contact our group with an question
