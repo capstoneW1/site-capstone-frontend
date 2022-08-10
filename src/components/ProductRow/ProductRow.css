@@ -39,3 +39,12 @@
   font-size: 30px;
   line-height: 45px;
 }
+.pr {
+  margin-left: 20px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.pr-content {
+  margin: 0px 10px;
+}

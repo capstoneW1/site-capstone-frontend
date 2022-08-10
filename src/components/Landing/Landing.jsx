@@ -32,8 +32,8 @@ export default function Landing() {
           <p className="landing-titles">ELEVATE</p>
           <p className="info">
             Enter the world of sneakers! Whether you are an experienced
-            sneakerhead or are taking your first steps, ELEVATE has
-            everything for your daily footwear needs.
+            sneakerhead or are taking your first steps, ELEVATE has everything
+            for your daily footwear needs.
           </p>
           <div className="landing-button">
             <button className="browse-btn" onClick={browse}>
@@ -54,7 +54,7 @@ export default function Landing() {
           />
         </div>
       </div>
-      <ProductRow name={"1"} number={"4"}></ProductRow>
+      <ProductRow rows={1} cols={4}></ProductRow>
       {/* The AboutUs component will display information about the purpose of our webpage and functionality */}
       <AboutUs></AboutUs>
       {/* The Footer component will display information about how to contact our group with an question

@@ -111,7 +111,7 @@ export default function Login() {
         </div>
       </div>
       <div className="featured">
-        <ProductRow name={"2"} number={"2"}></ProductRow>
+        <ProductRow rows={2} cols={2}></ProductRow>
       </div>
     </div>
   );
