@@ -5,6 +5,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import ProductCard from "../../components/ProductCard/ProductCard";
 import apiClient from "../../services/apiClient";
+import Carousel from "better-react-carousel";
 
 /*
 These two variables are in charge of styling the css of the next and previous arrow
@@ -47,24 +48,21 @@ export default function ProductRow(props) {
     getSneakers();
   }, []);
 
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 3,
-    prevArrow: <SlickArrowLeft />,
-    nextArrow: <SlickArrowRight />,
-    rows: Number(props.name),
-  };
   return (
     <div className="product-row-container">
       <p className="pr-titles">Featured</p>
-      <Slider {...settings}>
+
+      <Carousel cols={4} rows={1} gap={0} loop showDots>
         {sneaker.slice(0, 12).map((ele, idx) => {
-          return <ProductCard product={ele} key={idx}></ProductCard>;
+          return (
+            <Carousel.Item>
+              <div className="pr">
+                <ProductCard product={ele} key={idx}></ProductCard>
+              </div>
+            </Carousel.Item>
+          );
         })}
-      </Slider>
+      </Carousel>
     </div>
   );
 }
