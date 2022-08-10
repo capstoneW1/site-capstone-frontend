@@ -52,10 +52,10 @@ export default function ProductRow(props) {
     <div className="product-row-container">
       <p className="pr-titles">Featured</p>
 
-      <Carousel cols={4} rows={1} gap={0} loop showDots>
+      <Carousel cols={props.cols} rows={props.rows} gap={0} loop showDots>
         {sneaker.slice(0, 12).map((ele, idx) => {
           return (
-            <Carousel.Item>
+            <Carousel.Item key={idx}>
               <div className="pr">
                 <ProductCard product={ele} key={idx}></ProductCard>
               </div>
