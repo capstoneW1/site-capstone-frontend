@@ -33,7 +33,7 @@ export default function SearchPage() {
       <div className="search-page">
           <SearchProduct searchItem={searchItem}></SearchProduct>
           <>
-            <ProductRow name={"1"} number={"4"}></ProductRow>
+            <ProductRow rows={1} cols={4}></ProductRow>
           </>
           <Footer></Footer>
       </div>
